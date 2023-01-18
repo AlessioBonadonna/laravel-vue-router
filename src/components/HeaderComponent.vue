@@ -36,6 +36,16 @@
                         label: 'Projects',
                         routeName: 'projects'
                     },
+                    {
+                        label: 'Chi Siamo',
+                        routeName: 'about'
+
+                    },
+                    {
+                        label: 'Contatti',
+                        routeName: 'contact'
+
+                    },
                     
                 ]
             }
