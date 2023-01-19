@@ -12,9 +12,11 @@
                     <div class="card-body">
                         <h5 class="card-title">{{project.name_proj}}</h5>
                         <p class="card-text">{{ truncateContent(project.description) }}</p>
-                        <router-link class="btn btn-primary" :to="{name: 'project-single', params:{slug: project.slug}}">
+                        <router-link class="btn btn-success" :to="{name: 'project-single', params:{slug: project.slug}}">
                         Vedi il post
-                        </router-link>                    
+                        </router-link>    
+                        
+                        
                     </div>
                 </div>
             </div>
