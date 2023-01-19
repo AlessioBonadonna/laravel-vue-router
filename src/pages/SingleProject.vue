@@ -1,5 +1,7 @@
 <template>
-    <section v-if="project" class="container mt-5 ">
+
+    <section v-if="project">
+
         <h1>{{ project.name_proj }}</h1>
         <img :src="`${store.imagBasePath}${project.cover_image}`" class="card-img-top" :alt="project.name_proj">
         <p>{{ project.name }}</p>
@@ -10,7 +12,9 @@
         <div v-if="project.language && project.language.length > 0">
     <h5>language</h5>
     <div>
-        <span v-for="(language,index) in post.languages" :key="index" class="badge text-bg-info">{{ language.name }}</span>
+
+        <span v-for="(language,index) in post.languages" :key="index" class="badge text-bg-info">{{ languages.name }}</span>
+>>>>>>> origin/main
     </div>
    </div>
    </section>

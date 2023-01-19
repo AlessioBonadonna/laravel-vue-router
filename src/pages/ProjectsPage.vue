@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>Lista dei post</h1>
+
      <div class="row">
         <div class="container">
 
@@ -27,6 +28,7 @@
                 <li class="page-item" v-for="n in lastPage"><a class="page-link" @click="getPosts(n)">{{n}}</a></li>    
             </ul>
         </nav>
+
     </div>
 </template>
 
@@ -69,12 +71,15 @@ import { store } from '../store'
         
         },
         mounted(){
+
             this.getPosts();
+
         }
     }
 </script>
 
 <style lang="scss" scoped>
+
 
 .container{
     // max-width: 1140px;
@@ -88,5 +93,6 @@ import { store } from '../store'
 
 
 }
+
 
 </style>
