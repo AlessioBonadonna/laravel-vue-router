@@ -21,18 +21,19 @@ export default {
 <style lang="scss" scoped>
 #homepage {
   background-image: url("/img/hdr.jpg");
-  height: 100vh;
+  height: calc(100vh - 115px);
   background-repeat: no-repeat;
   background-size: cover;
 
+  z-index: 500;
+
   .container {
-    position: relative;
-    padding-top: 500px;
+    padding-top: 250px;
     .text-home {
       background-color: rgba(0, 0, 0, 0.514);
       border: 5px solid rgba(0, 0, 0, 0.709);
       text-align: center;
-      position: absolute;
+
       width: 100%;
       top: 50%;
       left: 0;

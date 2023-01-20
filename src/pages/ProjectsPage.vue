@@ -5,25 +5,7 @@
     <div class="container">
       <div class="row">
         <div v-for="(project, index) in projects" :key="index">
-          <div class="card mt-5">
-            <img
-              :src="`${store.imagBasePath}${project.cover_image}`"
-              class="img-proj"
-              :alt="project.name_proj"
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{ project.name_proj }}</h5>
-              <p class="card-text">
-                {{ truncateContent(project.description) }}
-              </p>
-              <router-link
-                class="btn btn-success"
-                :to="{ name: 'project-single', params: { slug: project.slug } }"
-              >
-                Vedi il post
-              </router-link>
-            </div>
-          </div>
+          <CardComponent :project="project"></CardComponent>
         </div>
       </div>
       <nav aria-label="Page navigation example">
@@ -40,6 +22,7 @@
 
 <script>
 import axios from "axios";
+import CardComponent from "../components/CardComponent.vue";
 import { store } from "../store";
 export default {
   name: "ProjectsPage",
@@ -50,7 +33,6 @@ export default {
       currentPage: 1,
       lastPage: null,
       total: 0,
-      contentMaxLen: 100,
     };
   },
   methods: {
@@ -63,7 +45,6 @@ export default {
         })
         .then((response) => {
           //console.log(response.data.results);
-
           this.projects = response.data.results;
           console.log(this.projects);
           console.log(response);
@@ -72,16 +53,11 @@ export default {
           this.total = response.data.results.total;
         });
     },
-    truncateContent(text) {
-      if (text.length > this.contentMaxLen) {
-        return text.substr(0, this.contentMaxLen) + "...";
-      }
-      return text;
-    },
   },
   mounted() {
     this.getPosts();
   },
+  components: { CardComponent },
 };
 </script>
 

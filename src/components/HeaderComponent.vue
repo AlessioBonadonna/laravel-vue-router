@@ -58,21 +58,23 @@ export default {
 
 <style lang="scss" scoped>
 header {
-}
-nav {
-  background-color: rgba(0, 0, 0, 0);
-  position: fixed;
-  width: 100%;
-
-  .container {
-    img {
-      width: 100px;
-    }
-    ul {
-      margin: 0 auto;
-      li {
-        .gold {
-          color: gold;
+  background: rgb(96, 130, 146);
+  background: linear-gradient(
+    180deg,
+    rgba(96, 130, 146, 1) 0%,
+    rgba(76, 86, 99, 1) 100%
+  );
+  nav {
+    .container {
+      img {
+        width: 100px;
+      }
+      ul {
+        margin: 0 auto;
+        li {
+          .gold {
+            color: gold;
+          }
         }
       }
     }
