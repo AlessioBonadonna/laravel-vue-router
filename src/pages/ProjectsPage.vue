@@ -10,7 +10,11 @@
       </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
+            <button :disabled="currentPage === 1"  @click="getPosts(currentPage - 1)" >
+              Previous
+            </button>
+          </li>
           <li class="page-item" v-for="n in lastPage">
             <a class="page-link" @click="getPosts(n)">{{ n }}</a>
           </li>
@@ -45,7 +49,7 @@ export default {
         })
         .then((response) => {
           //console.log(response.data.results);
-          this.projects = response.data.results;
+          this.projects = response.data.results.data;
           console.log(this.projects);
           console.log(response);
           this.currentPage = response.data.results.current_page;
