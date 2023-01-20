@@ -1,22 +1,27 @@
 <template>
-  <div>
-    <h1>Lista dei post</h1>
+  <div id="projects" class="p-5">
+    <h1 class="text-center ">Lista dei progetti</h1>
 
     <div class="container">
-      <div class="row">
-        <div v-for="(project, index) in projects" :key="index">
-          <CardComponent :project="project"></CardComponent>
+      <div class=" d-flex">
+        <div v-for="(project, index) in projects" :key="index" class="col-4 my-5">
+          <CardComponent class=""  :project="project"></CardComponent>
         </div>
       </div>
-      <nav aria-label="Page navigation example">
+      <nav aria-label="Page navigation example mt-5">
         <ul class="pagination">
           <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
-            <button :disabled="currentPage === 1"  @click="getPosts(currentPage - 1)" >
+            <button class="page-link" :disabled="currentPage === 1"  @click="getPosts(currentPage - 1)" >
               Previous
             </button>
           </li>
           <li class="page-item" v-for="n in lastPage">
             <a class="page-link" @click="getPosts(n)">{{ n }}</a>
+          </li>
+          <li class="page-item" :class="{ 'disabled': currentPage === lastPage }">
+            <button class="page-link" :disabled="currentPage === lastPage"  @click="getPosts(currentPage + 1)" >
+              next
+            </button>
           </li>
         </ul>
       </nav>
@@ -65,14 +70,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.container {
-  .card {
-    width: calc(100% / 3);
+<style lang="scss" scoped >
+#project{
+  height: 100%;
 
-    .img-proj {
-      width: 90px !important;
-    }
-  }
 }
+
+
 </style>

@@ -1,17 +1,20 @@
 <template>
-  <div class="card mt-5">
-    <img
-      :src="`${store.imagBasePath}${project.cover_image}`"
-      class="img-proj"
-      :alt="project.name_proj"
-      v-if="project.cover_image"
-    />
-    <img
-      src="https://via.placeholder.com/100x100.png?text=Placeholder"
-      class="card-img-top w-100"
-      :alt="project.name_proj"
-      v-else
-    />
+  <div class="card mx-2  ">
+    <div class="box-img">
+      <img
+        :src="`${store.imagBasePath}${project.cover_image}`"
+        class="img-proj card-img-top"
+        :alt="project.name_proj"
+        v-if="project.cover_image"
+      />
+      <img
+        src="https://via.placeholder.com/100x100.png?text=Placeholder"
+        class="card-img-top "
+        :alt="project.name_proj"
+        v-else
+      />
+
+    </div>
     <div class="card-body">
       <h5 class="card-title">{{ project.name_proj }}</h5>
       <p class="card-text">
@@ -49,4 +52,20 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card{
+  max-height: 800px;
+  height: 600px;
+  
+  .box-img{
+    height: 350px;
+    overflow:hidden;
+
+    .img-proj{
+     
+    
+    }
+  }
+
+}
+</style>
