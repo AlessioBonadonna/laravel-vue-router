@@ -1,6 +1,6 @@
 <template>
     <div>
-aboutpage
+<img src="../../public/img/workinprogrs.jpg" alt="">
     </div>
 </template>
 

@@ -40,7 +40,7 @@
       </div>
       <div v-if="project.lvl_dif">
         <h5>livello di dificolta </h5>
-        <p>{{ project.lvl_dif }}</p> 
+        <p>{{ stars(project.lvl_dif) }}</p> 
         <!-- devo implementare la funzione che mi stampi le stelline -->
       </div>
       <!-- <ul>
@@ -103,16 +103,10 @@ export default {
             this.$route.push({ name: "not-found" });
           }
         });
-    },
-  },
-  
-  mounted() {
-    this.getProject();
-  },
-  stars(rating) {
+    },stars(rating) {
       let stars = '';
-      for (let i = 0; i < 10; i++) {
-        if (i < rating) {
+      for (let i = 0; i < 5; i++) {
+        if (i < (rating/2.5) ) {
           stars += '★';
         } else {
           stars += '☆';
@@ -120,6 +114,12 @@ export default {
       }
       return stars;
     }
+  },
+  
+  mounted() {
+    this.getProject();
+  },
+  
   }
 
 

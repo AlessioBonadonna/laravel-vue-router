@@ -1,6 +1,6 @@
 <template>
     <div>
-contattami 
+        <img src="../../public/img/workinprogrs.jpg" alt="">
     </div>
 </template>
 
