@@ -1,6 +1,6 @@
 <template>
   <div id="projects" class="p-5">
-    <h1 class="text-center ">Lista dei progetti</h1>
+    <h1 class="text-center  gold">Lista dei progetti</h1>
 
     <div class="container">
       <div class=" d-flex">
