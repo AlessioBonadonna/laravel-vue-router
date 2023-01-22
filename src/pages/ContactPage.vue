@@ -1,21 +1,23 @@
 <template>
     <div id="contact" class="container">
-        <div class="p-3">
-            <div class="text-center ">
-                <h1 class="">About Me </h1>
-                <p>
-
-                    <q>Tutto ciò che farai nella vita lascerà una traccia: impegnati per avere piena coscienza di ogni tua azione.</q>
-                    <br>
-                    <strong>Pablo Coelho</strong>
-                </p>
-
-            </div>
-            <div class="box-img text-center">
-                <img  class="avatar " src="../../public/img/melogo.jpeg" alt="myavatar">
-
-            </div>
+       <div class="d-flex p-5">
+        <div>
+            <img src="../../public/img/melogo.jpeg" alt="my avatar">
         </div>
+        <div class="contacts ms-5">
+            <h3>I miei contatti </h3>
+            <ul>
+
+                <li v-for="(social,index ) in socials" :key="index">
+             
+                <a  class="gold" :href="social.url"> {{ social.site }}</a>
+
+                </li>
+            </ul>
+            
+        </div>
+        
+       </div>
     </div>
         
     
@@ -23,9 +25,25 @@
 
 <script>
     export default {
-        name:'ContactPage'
+        name:'ContactPage',
+        data(){
+            return{
+                socials:[
+                    {
+                        site:"linkedin",
+                        url:"https://www.linkedin.com/in/alessio-bonadonna-714b38251/",
+
+                    },
+                    {
+                        site:"github",
+                        url:"https://github.com/AlessioBonadonna"
+                    }
+                ]
+            }
+        }
     }
 </script>
+
 
 <style lang="scss" scoped>
 .box-img{
